@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/sitecafe_p1.css">
+	<title>Expresso do Café - Compras</title>
+</head>
+<body>
+	<header>	
+    <img class="logo_small" src="img/Logo_Pequeno.png">
+     <address>Avenida Mochaccino, 10
+    	(21) 1234-5678
+    	contato@coffe.com.br
+     </address>
+	</header>
+
+	<nav>
+	    <a href="index.html">Inicial</a><br> 
+	    <a href="saches.html">Sachês</a><br>
+	    <a href="maquinas.html">Máquinas</a><br>
+	    <a href="compras.html">Compras</a><br>
+ 	</nav>
+
+ 	<section>
+ 	<div class="compras">
+ 		<fieldset >
+ 			<legend>Dados de Identificação</legend>
+ 			<br>
+
+ 			<label for="nome">Nome:</label>&nbsp;&nbsp;
+			<input type="texto" name="nome" id="nome" size="32" maxlength="30"/>&nbsp;&nbsp;
+
+
+			<label for="cpf">CPF:</label>&nbsp;&nbsp;
+			<input type="text" name="cpf" id="cpf" size="22" maxlength="14"/><br><br>
+
+			<label for="telefone">Telefone:</label>
+			<input type="text" name="tel" id="tel" maxlength="9"/>&nbsp;&nbsp;&nbsp;&nbsp;	
+
+			<label for="email">Email:</label>
+			<input type="text" name="email" id="email" size="30" maxlength="50"/><br><br>
+
+			<label for="ender">Endereço:</label>
+			<input type="text" name="address" id="ender" size="65"> 
+ 		</fieldset>
+
+ 		<fieldset>
+ 			<legend>Produtos</legend>
+ 			<br>
+
+ 			<label for="machine">Maquinas:</label>
+ 			<select>
+ 				<option>---</option>
+ 				<option>Piccolo</option>
+ 				<option>Inissia C40</option>
+ 				<option>U C50</option>
+ 				<option>HD7811/96</option>
+ 			</select>
+ 			<br><br>
+
+ 			<label for="saches">Sachês:</label>
+ 			<select>
+ 				<option>---</option>
+ 				<option>Dolce Gusto</option>
+ 				<option>Senseo</option>
+ 				<option>Nespresso</option>
+ 			</select>
+ 			<br><br>
+
+ 			<label>Selecionados:</label>
+ 			<button>Remover</button>
+ 		</fieldset>
+
+ 		<fieldset>
+ 			<legend>Forma de Pagamento</legend>
+ 			<br>
+
+ 			<input type="radio" name="cartao" value="cartao" id="cartao"/>
+			<label for="cartao">Cartão</label>
+
+			<input type="radio" name="cheque" value="cheque" id="cheque"/>
+			<label for="cheque">Cheque</label>
+
+			<input type="radio" name="cheque" value="cheque" id="cheque"/>
+			<label for="cheque">Cheque</label>
+			<br><br>
+
+			<fieldset>
+				<legend>Dados do Cartão</legend>
+
+				<input type="radio" name="visa" value="visa" id="visa">
+				<label for="visa"><img src="img/visa.png"></label>
+
+				<input type="radio" name="master" value="master" id="master">
+				<label for="master"><img src="img/master.png"></label>
+
+				<input type="radio" name="amex" value="amex" id="amex">
+				<label for="amex"><img src="img/amex.png"></label>
+				<br><br>
+
+				<label>Validade:</label>
+
+			</fieldset>
+		</fieldset>
+ 	</div>
+ 	</section>
+ 	
+ 	<!-Essa é a parte que programa e define que o texto fique em formato de cpf e o telefone->
+
+ 	<script type="text/javascript">
+ 		const cpf = document.querySelector("#cpf");
+
+		cpf.addEventListener("keyup", () => {
+  		let value = cpf.value.replace(/[^0-9]/g, "").replace(/^([\d]{3})([\d]{3})?([\d]{3})?([\d]{2})?/, "$1.$2.$3-$4");
+  
+  		cpf.value = value;
+});
+
+	const tel = document.querySelector("#tel");
+
+		tel.addEventListener("keyup", () => {
+  		let value = tel.value.replace(/[^0-9]/g, "").replace(/^([\d]{5})([\d]{4})/, "$1-$2");
+  
+  		tel.value = value;
+});
+ 	</script>
+</body>
+</html>
